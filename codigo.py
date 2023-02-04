@@ -1,33 +1,22 @@
-class Persona:
-    def __init__(self,nombre,apellido):
-        self.nombre = nombre
-        self.apellido = apellido
-    pass
-
-class Cliente(Persona):
-    def __init__(self,nombre,apellido,numero_cuenta,balance):
-        super().__init__(nombre,apellido)
-        self.numero_cuenta =numero_cuenta
-        self.balance = balance
-
-    def depositar(self,cantidad):
-        self.balance += cantidad
-        
-
-    def retirar(self,cantidad):
-        self.balance -= cantidad
-
-
-def crear_cliente():
-    cliente = Cliente("juan", "peres", 12, 5000)
+"""Generadores de turno para calcular el turno donde se esta"""
 
 
 
-def inicio(cliente):
-    pass
+def generador_perfumeria():
+    x = 0
+    while True:
+        x +=1
+        yield "P - "+x
 
-cliente = Cliente("f", "f", 5, 5)
+def generador_farmacia():
+    x = 0
+    while True:
+        x +=1
+        yield "F - "+x
 
-cliente =Cliente("juan", "peres", 12, 5000)
 
-print(cliente.balance)
+def generador_cosmetica():
+    x = 0
+    while True:
+        x +=1
+        yield "C - "+x
